@@ -17,7 +17,9 @@ class PostController extends Controller
      */
     public function index()
     {
-
+       // session()->forget('key');
+      // session(['key'=>'value']);
+      // session(['key2'=>'value2']);
        $posts = Post::paginate(2);
 
        return view('dashboard/post/index', compact('posts'));
@@ -76,7 +78,7 @@ class PostController extends Controller
         dd($validated->errors());*/
 
        Post::create($request->validated());
-        return to_route('post.index'); 
+        return to_route('post.index')->with('status','Post Created'); 
   /**      
         $request->validate([
             'title'=>'required|min:5|max:500',
@@ -138,7 +140,7 @@ class PostController extends Controller
         //image
        
         $post->update($request->validated());
-        return to_route('post.index');
+        return to_route('post.index')->with('status','Post Updated');
         //
     }
 
@@ -149,7 +151,7 @@ class PostController extends Controller
     {
         
         $post->delete();
-         return to_route('post.index');
+         return to_route('post.index')->with('status','Post Delete');
         //
     }
 }

@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+//Rutas Agrupadas
 Route::group(['prefix'=>'dashboard'],function(){
 
      //Paquete de Rutas Post

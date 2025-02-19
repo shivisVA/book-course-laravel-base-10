@@ -9,6 +9,19 @@
           </script>
  </head>
  <body  bgcolor="Pink" >
+
+   @session('key')
+      <h2>{{ $value }}</h2>
+   @endsession
+
+   @session('key2')
+      <h2>{{ $value }}</h2>
+   @endsession
+
+   @if(session('status'))
+      {{ session('status') }}
+   @endif 
+
     <h1>Hola Master</h1>
 
     @yield('content')
