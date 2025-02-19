@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+App\models \Category:: class;
 class PostController extends Controller
 {
     /**
@@ -19,7 +19,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        
+        return view('dashboard.post.create');
     }
 
     /**

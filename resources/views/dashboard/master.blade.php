@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang='en'>
  <head>
-  <title>Master</title>
+  <title>Dashboard</title>
      <meta charset='utf-8'>
         <style>
         </style>
           <script>
           </script>
  </head>
- <body>
+ <body  bgcolor="Pink" >
     <h1>Hola Master</h1>
 
-    @yield('contect')
+    @yield('content')
 
     <section>
-       @yield('more contect')
+       @yield('more content')
     </section>
     
  </body>
