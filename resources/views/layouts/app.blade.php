@@ -29,20 +29,7 @@
 
             <!-- Page Content -->
             <main>
-                <div class="container mx-auto">
-                    @if(session('status'))
-                        <div class="card card-succes my-3">
-                            {{ session('status') }}
-                   
-                        </div>
-                    @endif                  
-                    <div class="card card-white mt-8">
-                        <h1>Dashboard</h1>
-                        @yield('content')
-                    </div>
-                  
-               </div>
-                                
+                {{ $slot }}
             </main>
         </div>
     </body>

@@ -1,25 +1,25 @@
 @csrf
         <label>Titulo</label>
-        <input type="text" name="title" value="{{old('title',$post->title)}}">
+        <input class="form-control" type="text" name="title" value="{{old('title',$post->title)}}">
 
         <label>Slug</label>
-        <input type="text" name="slug" value="{{old('slug',$post->slug)}}">
+        <input class="form-control" type="text" name="slug" value="{{old('slug',$post->slug)}}">
 
         <label>Contenido</label>
-        <textarea name="content">{{old('content',$post->content) }}</textarea>
+        <textarea class="form-control"name="content">{{old('content',$post->content) }}</textarea>
 
         <label for="">Categoria</label>
-        <select name="category_id">
+        <select  class="form-control" name="category_id">
            @foreach($categories as $title=>$id)
             <option {{ $post->category && old('category_id',$post->category_id)==$id ? "selected" : "" }} value="{{ $id }}">{{ $title }}</option>
            @endforeach
         </select>
 
         <label>Descripcion</label>
-        <textarea name="description"> {{old('description',$post->description) }}</textarea>
+        <textarea class="form-control"name="description"> {{old('description',$post->description) }}</textarea>
 
          <label>Posted</label>
-        <select name="posted">
+        <select class="form-control" name="posted">
             <option {{ old('posted',$post->posted) == "not" ? "selected" : ""}} value="not">Not</option>
             <option {{ old('posted',$post->posted) == "yes" ? "selected" : ""}} value="yes">Yes</option>
         </select>
@@ -28,4 +28,4 @@
         	<label for="">Image</label>
         	<input type="file" name="image">
         @endif
-        <button type="submit">send</button> 
+        <button class="btn btn-succes mt-2" type="submit">send</button> 
