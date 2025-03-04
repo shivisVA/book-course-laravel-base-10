@@ -17,37 +17,16 @@ class PostController extends Controller
      */
     public function index()
     {
+       /* $category_id=2;
+        $var2='yes';
+dd(Post::where('id','>=',1)->where(function($query) use($category_id, $var2){$query->where('category_id',$category_id)->orwhere('posted',$var2);})->toSql());
+*/
        // session()->forget('key');
       // session(['key'=>'value']);
       // session(['key2'=>'value2']);
        $posts = Post::paginate(2);
 
        return view('dashboard/post/index', compact('posts'));
-       //$category= Category::find(1);
-      // dd($category->posts[1]->title);
-    /**    $post->update(
-            [
-                'title'=>'test titulo',
-                'slug'=>'test slug',
-                'content'=>' content',
-                'category_id'=>1,
-                'description'=>'test descripcion',
-                'posted'=>'not',
-                'image'=>'test image',
-            ]
-*/
-       /**Post::create(
-            [
-                'title'=>'test title',
-                'slug'=>'test slug',
-                'content'=>'test content',
-                'category_id'=>1,
-                'description'=>'test description',
-                'posted'=>'not',
-                'image'=>'test image',
-            ]
-        );*/
-
         
         return 'index';
     }
